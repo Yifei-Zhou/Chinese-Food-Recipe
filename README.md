@@ -11,7 +11,7 @@ The team page shows all the developers of this web application.
 The routes are set up in the App.js file. Each recipe detail (total 8) has its own route using dynamic segment. The landing page route directs to the RecipeList component.
 
 Instructions:
-1. git clone
+1. git clone https://github.com/Yifei-Zhou/Chinese-Food-Recipe.git
 2. cd recipe
 3. npm install
 4. npm start
