@@ -2,8 +2,6 @@ import React from 'react';
 
 const Developer = () => {
 
-    image: "https://bellyfull.net/wp-content/uploads/2016/03/Classic-Margherita-Pizza-blog-2.jpg"
-
     return (
         <div>
             <h1>Developer</h1>
