@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import RecipeList from './components/RecipeList';
 import RecipeDetail from "./components/RecipeDetail/RecipeDetail";
-import TeamPage from "./components/TeamPage/TeamPage";
+import Developer from "./components/Developer";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -134,7 +134,7 @@ const App = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Link href="/team">Team Page</Nav.Link>
+                <Nav.Link href="/developer">Developer Info</Nav.Link>
                 <NavDropdown title="Recipes Links" id="basic-nav-dropdown">
                   {recipes.map((recipe) => (
                     <NavDropdown.Item href={"/recipes/" + recipe.id}>{recipe.title}</NavDropdown.Item>
@@ -189,7 +189,7 @@ const App = () => {
             path="/recipes/:id"
             element={<RecipeDetail recipes={recipes} addToGroceryList={handleAddToGroceryList} />}
           />
-          <Route path="/team" element={<TeamPage />} />
+          <Route path="/developer" element={<Developer />} />
         </Routes>
       </div>
     </Router>
