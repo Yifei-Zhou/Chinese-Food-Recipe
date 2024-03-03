@@ -30,7 +30,7 @@ const Developer = () => {
                   src="ProfilePhoto.JPG"
                   alt="avatar"
                   className="rounded-circle"
-                  style={{ width: '150px' }}
+                  style={{ width: '150px', height: '220px' }}
                   fluid />
                 <p className="text-muted mb-1">MS Computer Science</p>
                 <p className="text-muted mb-4">Brandeis University, Waltham, MA</p>
@@ -76,7 +76,7 @@ const Developer = () => {
                     <MDBCardText>Full Name</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">Johnatan Smith</MDBCardText>
+                    <MDBCardText className="text-muted">Yifei Zhou</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -85,7 +85,7 @@ const Developer = () => {
                     <MDBCardText>Email</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">example@example.com</MDBCardText>
+                    <MDBCardText className="text-muted">yfzhou23@gmail.com</MDBCardText>
                   </MDBCol>
                 </MDBRow>
                 <hr />
@@ -100,19 +100,10 @@ const Developer = () => {
                 <hr />
                 <MDBRow>
                   <MDBCol sm="3">
-                    <MDBCardText>Mobile</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBCardText className="text-muted">(098) 765-4321</MDBCardText>
-                  </MDBCol>
-                </MDBRow>
-                <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
                     <MDBCardText>Address</MDBCardText>
                   </MDBCol>
                   <MDBCol sm="9">
-                    <MDBCardText className="text-muted">Bay Area, San Francisco, CA</MDBCardText>
+                    <MDBCardText className="text-muted">Waltham, MA</MDBCardText>
                   </MDBCol>
                 </MDBRow>
               </MDBCardBody>
