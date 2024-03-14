@@ -1,7 +1,3 @@
-Name: Yifei Zhou
-Personal email: yfzhou23@gmail.com
-School email: yifeizhou@brandeis.edu
-
 Descriptions:
 
 The landing page displays summaries of 8 recipes, which includes the recipe title, an image, and a link to the details page for the recipe.
