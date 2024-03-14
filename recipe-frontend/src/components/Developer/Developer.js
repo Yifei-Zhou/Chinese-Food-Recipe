@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import {
   MDBCol,
   MDBContainer,
@@ -35,8 +36,12 @@ const Developer = () => {
                 <p className="text-muted mb-1">MS Computer Science</p>
                 <p className="text-muted mb-4">Brandeis University, Waltham, MA</p>
                 <div className="d-flex justify-content-center mb-2">
-                  <MDBBtn>Follow</MDBBtn>
-                  <MDBBtn outline className="ms-1">Message</MDBBtn>
+                  <Link to= "https://github.com/Yifei-Zhou" target="_blank">
+                    <MDBBtn>Follow Github</MDBBtn>
+                  </Link>
+                  <a href="mailto:yfzhou23@gmail.com">
+                    <MDBBtn outline className="ms-1">Email</MDBBtn>
+                  </a>         
                 </div>
               </MDBCardBody>
             </MDBCard>
