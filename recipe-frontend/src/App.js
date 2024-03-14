@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import RecipeList from './components/RecipeList/RecipeList';
 import RecipeDetail from "./components/RecipeDetail/RecipeDetail";
-import TeamPage from "./components/TeamPage/TeamPage";
+import Developer from "./components/Developer/Developer";
 import AddRecipe from "./components/AddRecipe/AddRecipe";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
@@ -62,10 +62,7 @@ const App = () => {
   useEffect(() => {
     axios.get('http://localhost:8000/api/recipes').then(response => {
       setRecipes(response.data);
-
       const recipeData = response.data;
-      console.log(JSON.stringify(recipeData[1]));
-      // console.log(recipes);
     }).catch(error => {
       console.error('Error: ', error);
     });
@@ -90,7 +87,7 @@ const App = () => {
                 </NavDropdown>
                 <Nav.Link onClick={handleShow}>Grocery List</Nav.Link>
                 <Nav.Link href="/addrecipes">Add Your Recipes</Nav.Link>
-                <Nav.Link href="/team">Team Page</Nav.Link>
+                <Nav.Link href="/developer">Developer</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
@@ -139,7 +136,7 @@ const App = () => {
             path="/recipes/:id"
             element={<RecipeDetail recipes={recipes} addToGroceryList={handleAddToGroceryList} />}
           />
-          <Route path="/team" element={<TeamPage />} />
+          <Route path="/developer" element={<Developer />} />
           <Route path="/addrecipes" element={<AddRecipe recipes={recipes}/>} />
         </Routes>
       </div>
