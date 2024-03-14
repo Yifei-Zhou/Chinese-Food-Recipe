@@ -71,7 +71,7 @@ const App = () => {
     <Router>
       <div className="App">
         <header className="App-header">
-          <h1>My Recipe Book</h1>
+          <h1>Chinese Recipes Book</h1>
         </header>
         <Navbar expand="lg" className="bg-body-tertiary">
           <Container>
