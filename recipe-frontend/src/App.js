@@ -62,7 +62,6 @@ const App = () => {
   useEffect(() => {
     axios.get('http://localhost:8000/api/recipes').then(response => {
       setRecipes(response.data);
-      const recipeData = response.data;
     }).catch(error => {
       console.error('Error: ', error);
     });
