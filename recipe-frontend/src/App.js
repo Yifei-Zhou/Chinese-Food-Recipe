@@ -90,7 +90,7 @@ const App = () => {
                 </NavDropdown>
                 <Nav.Link onClick={handleShow}>Grocery List</Nav.Link>
                 <Nav.Link href="/addrecipes">Add Your Recipes</Nav.Link>
-                <Nav.Link href="/team">Team Page</Nav.Link>
+                <Nav.Link href="/developer">Developers</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Container>
