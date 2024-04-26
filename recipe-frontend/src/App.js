@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 import RecipeList from './components/RecipeList/RecipeList';
 import RecipeDetail from "./components/RecipeDetail/RecipeDetail";
-import TeamPage from "./components/TeamPage/TeamPage";
+import Developer from "./components/Developer/Developer";
 import AddRecipe from "./components/AddRecipe/AddRecipe";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
@@ -139,7 +139,7 @@ const App = () => {
             path="/recipes/:id"
             element={<RecipeDetail recipes={recipes} addToGroceryList={handleAddToGroceryList} />}
           />
-          <Route path="/team" element={<TeamPage />} />
+          <Route path="/developer" element={<Developer />} />
           <Route path="/addrecipes" element={<AddRecipe recipes={recipes}/>} />
         </Routes>
       </div>
