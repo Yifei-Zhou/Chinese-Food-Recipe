@@ -4,23 +4,19 @@ const Card = ({recipe, index}) => {
   return (
     <CardWrapper>
       <div className="image-container">
-        <img src={recipe.image[index]} alt="lemon" />
+        <img src={recipe.image[index]} alt="No Image" />
       </div>
 
       <div className="content">
         <div className="heading">
-          <h2 className="heading__title">
-            <span className="next-line">{recipe.title}</span>
-          </h2>
-            <h3 className="step">
-                <span className="next-line">Step {index}</span>
-            </h3>
+          <h3 className="step">
+              <span className="next-line">Step {index}</span>
+          </h3>
         </div>
 
         <div className="details">
           <p className="details__text">
             {recipe.instructions[index - 1]}
-            <span className="next-line">sed do eiusmod tempor</span>
           </p>
         </div>
       </div>
@@ -33,18 +29,18 @@ const CardWrapper = styled.div`
   background: #f5f5f6;
 
   .image-container {
-    height: 168px;
-    border-radius: 8px 8px 0 0;
-    overflow: hidden;
+    height: 300px;
+    border-radius: 0 0 0 0;
+    overflow: scale-down;
 
     @media (min-width: 832px) {
-      height: 192px;
+      height: 300px;
     }
 
     img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
   }
 

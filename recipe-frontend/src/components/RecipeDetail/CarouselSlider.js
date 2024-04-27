@@ -43,12 +43,10 @@ const CarouselSlider = ({ setSlideCount, setCurrentSlide, recipe}) => {
 
     if (screenWidth < 832) {
       updateCarouselSlide(1);
-    } else if (screenWidth < 1088) {
-      updateCarouselSlide(2);
-    }
-    //>= 1088
+    } 
+    //>= 832
     else {
-      updateCarouselSlide(3);
+      updateCarouselSlide(2);
     }
   }, [screenWidth, setSlideCount, setCurrentSlide, carouselContext]);
 

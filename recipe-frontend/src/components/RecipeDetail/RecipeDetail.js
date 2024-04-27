@@ -89,7 +89,7 @@ const RecipeDetail = ({ recipes, addToGroceryList }) => {
                 <p className="mb-3" style={{ fontSize: '18px', fontStyle: 'italic' }}>
                   {recipe.description}
                 </p>
-                <h3 className="mb-3" style={{ fontSize: '2.0rem' }}>Ingredients:</h3>
+                <h3 className="mb-3" style={{ fontSize: '2.rem' }}>Ingredients:</h3>
                 <ul className="list-unstyled">
                   {recipe.ingredients.map((ingredient, index) => (
                     <li key={index} style={{ fontSize: '1.2rem' }}>
@@ -160,26 +160,26 @@ const RecipeDetail = ({ recipes, addToGroceryList }) => {
         </Col>
       </Row>
       {showInstructions && (
-        <ModalWrapper onClick={handleModalClose}>
-        <CarouselWrapper className="carousel-container" onClick={handleCarouselClick}>
-        <CarouselProvider
-          visibleSlides={slideCount}
-          totalSlides={recipe.instructions.length}
-          step={1}
-          currentSlide={currentSlide}
-          naturalSlideWidth={100}
-          naturalSlideHeight={125}
-          isIntrinsicHeight={true}
-        >
-          <CarouselSlider
-            setSlideCount={setSlideCount}
-            setCurrentSlide={setCurrentSlide}
-            recipe={recipe}
-          />
-        </CarouselProvider>
-      </CarouselWrapper>
-      </ModalWrapper>
-    )}
+        <ModalWrapper onClick={handleModalClose} style={{ width: '100%', height: '100%' }}>
+          <CarouselWrapper  className="carousel-container" onClick={handleCarouselClick}>
+            <CarouselProvider
+              visibleSlides={slideCount}
+              totalSlides={recipe.instructions.length}
+              step={1}
+              currentSlide={currentSlide}
+              naturalSlideWidth={100}
+              naturalSlideHeight={300}
+              isIntrinsicHeight={true}
+            >
+              <CarouselSlider
+                setSlideCount={setSlideCount}
+                setCurrentSlide={setCurrentSlide}
+                recipe={recipe}
+              />
+            </CarouselProvider>
+          </CarouselWrapper>
+        </ModalWrapper>
+      )}
     </Container>
   );
 };
