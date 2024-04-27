@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
+import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -88,10 +89,10 @@ const RecipeDetail = ({ recipes, addToGroceryList }) => {
                 <p className="mb-3" style={{ fontSize: '18px', fontStyle: 'italic' }}>
                   {recipe.description}
                 </p>
-                <h3 className="mb-3">Ingredients:</h3>
+                <h3 className="mb-3" style={{ fontSize: '2.0rem' }}>Ingredients:</h3>
                 <ul className="list-unstyled">
                   {recipe.ingredients.map((ingredient, index) => (
-                    <li key={index} style={{ fontSize: '16px' }}>
+                    <li key={index} style={{ fontSize: '1.2rem' }}>
                       <Container>
                         <Row>
                           <Col md={6}>
@@ -100,7 +101,7 @@ const RecipeDetail = ({ recipes, addToGroceryList }) => {
                           <Col md={6}>
                             <Button
                               onClick={() => handleAddToGroceryList(ingredient)}
-                              style={{ padding: '2px 10px', fontSize: '0.8rem',
+                              style={{ padding: '2px 10px', fontSize: '0.9rem',
                                       marginBottom: '10px', backgroundColor: 'white', 
                                       color: 'black' }}
                               variant="primary">
@@ -139,6 +140,9 @@ const RecipeDetail = ({ recipes, addToGroceryList }) => {
                 className="img-fluid rounded"
                 style={{ width: '100%', height: '300px', objectFit: 'cover' }}
               />
+              <Card>
+                <Card.Body style={{ fontSize: '1.5rem' }}>Click on ingredients to check nutrient information (if available)</Card.Body>
+              </Card>
             </Col>
           </Row>
           <Row>
