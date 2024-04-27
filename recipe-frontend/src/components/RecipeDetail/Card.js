@@ -4,7 +4,7 @@ const Card = ({recipe, index}) => {
   return (
     <CardWrapper>
       <div className="image-container">
-        <img src={recipe.image} alt="lemon" />
+        <img src={recipe.image[index]} alt="lemon" />
       </div>
 
       <div className="content">
