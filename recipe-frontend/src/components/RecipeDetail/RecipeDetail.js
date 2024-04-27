@@ -134,7 +134,7 @@ const RecipeDetail = ({ recipes, addToGroceryList }) => {
             </Col>
             <Col xs={12} md={6} order={2}>
               <img
-                src={recipe.image}
+                src={recipe.image[0]}
                 alt={recipe.title}
                 className="img-fluid rounded"
                 style={{ width: '100%', height: '300px', objectFit: 'cover' }}
