@@ -48,19 +48,32 @@ const RecipeDetail = ({ recipes, addToGroceryList }) => {
     setShowInstructions(!showInstructions);
   };
 
+  const fetchingIngredient = {};
+
   useEffect(() => {
     const fetchIngredientsData = async () => {
       try {
-        const fetchedIngredients = recipe.ingredients; 
-        const fetchedData = await Promise.all(
-        fetchedIngredients.map(async (ingredient) => {
-          const response = await axios.get(`${searchUrl}?query=${ingredient}&api_key=${api_key}`);
-            console.log(response.data.foods[0]);
-            return response.data.foods[0];
-          })
-        );
-        const fdcIdsArray = fetchedData.map(data => data.fdcId);
-        setIngredientsData(fdcIdsArray);
+        if(ingredientsData.length == 0){
+          const fetchedData = await Promise.all(
+            recipe.ingredients.map(async (ingredient) => {
+              if(fetchingIngredient[ingredient]){
+                const temp = await fetchingIngredient[ingredient];
+                return temp.data.foods[0];
+              }
+
+              fetchingIngredient[ingredient] = axios.get(`${searchUrl}?query=${ingredient}&api_key=${api_key}`);
+              const response = await fetchingIngredient[ingredient];
+              const ingredientData = response.data.foods[0];
+
+              delete fetchingIngredient[ingredient];
+              
+              console.log(ingredientData);
+              return ingredientData;
+            })
+          );
+          const fdcIdsArray = fetchedData.map(data => data.fdcId);
+          setIngredientsData(fdcIdsArray);
+        }
       } catch (error) {
         console.error('Error fetching ingredients data:', error);
       }
