@@ -68,7 +68,7 @@ const CardWrapper = styled.div`
         font-weight: 200;
         line-height: 26px;
         color: #4b4c53;
-        font-size: 15px;
+        font-size: 20px;
         padding-bottom: 31px;
         word-spacing: 1px;
       }
