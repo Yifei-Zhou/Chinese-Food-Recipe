@@ -140,7 +140,7 @@ const App = () => {
             element={<RecipeDetail recipes={recipes} addToGroceryList={handleAddToGroceryList} />}
           />
           <Route path="/developer" element={<Developer />} />
-          <Route path="/addrecipes" element={<AddRecipe recipes={recipes}/>} />
+          <Route path="/addrecipes" element={<AddRecipe />} />
         </Routes>
       </div>
     </Router>
