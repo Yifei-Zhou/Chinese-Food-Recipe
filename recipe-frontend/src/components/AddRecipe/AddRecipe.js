@@ -4,14 +4,7 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 
 
-const AddRecipe = ( {recipes} ) => {
-  // const [recipe, setRecipe] = useState('');
-  // const [isValidJson, setIsValidJson] = useState(true);
-
-  // const handleChange = (e) => {
-  //   setRecipe(e.target.value);
-  // };
-
+const AddRecipe = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [ingredients, setIngredients] = useState('');
@@ -44,66 +37,43 @@ const AddRecipe = ( {recipes} ) => {
   };
 
   const handleSubmit = () => {
-
     const ingredientsArray = ingredients.split('\n');
     const dishImageURL = "https://drive.google.com/thumbnail?id=" + dishImage + "&sz=w1000";
     const instructionsArray = instructions.split('\n');
 
     const InstructionsImagesIDs = instructionsImages.split('\n');
     const InstructionsImagesURLs = InstructionsImagesIDs.map(id => "https://drive.google.com/thumbnail?id=" + id + "&sz=w1000");
-
-
-    const image = 
+    InstructionsImagesURLs.unshift(dishImageURL);
 
     const newRecipe = {
       title: title,
       description: description,
-      ingredients: ingredients,
-      instructions: instructions,
-      image: image
+      ingredients: ingredientsArray,
+      instructions: instructionsArray,
+      image: InstructionsImagesURLs
     }
 
-    try {
-      // Attempt to parse the JSON to check its validity
-      const parsedRecipe = JSON.parse(recipe);
-      setIsValidJson(true);
-      // Here, you can handle the valid JSON as needed, e.g., send it to an API
-      console.log('Valid JSON:', recipe);
-      alert('Recipe submitted successfully!');
-      
-      axios.post('http://localhost:8000/api/recipes', parsedRecipe, {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }).then(response => {
-        console.log('Recipe added: ', response.data);
-      }).catch(error => {
-        console.log('Error adding recipe: ', error.response.data);
-      });
-    } catch (error) {
-      setIsValidJson(false);
-      alert('The provided recipe is not valid JSON.');
-    }
-
+    axios.post('http://localhost:8000/api/recipes', newRecipe, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(response => {
+      console.log('Recipe added: ', response.data);
+    }).catch(error => {
+      console.log('Error adding recipe: ', error.response.data);
+    });
+    
     setTitle('');
     setDescription('');
+    setIngredients('');
+    setDishImage('');
+    setInstructions('');
+    setInstructionsImages('');
+
   };
 
   return (
     <div>
-      {/* <h2>Input Your Recipe in JSON Format</h2>
-      <textarea
-        value={recipe}
-        onChange={handleChange}
-        rows="10"
-        cols="50"
-        style={{ fontFamily: 'monospace' }}
-      />
-      <div>
-        <button onClick={validateAndSubmit}>Submit Recipe</button>
-      </div>
-      {!isValidJson && <p style={{ color: 'red' }}>Please enter valid JSON.</p>} */}
-
       <InputGroup className="mb-3">
         <InputGroup.Text id="input-Title">Recipe Name</InputGroup.Text>
         <Form.Control
