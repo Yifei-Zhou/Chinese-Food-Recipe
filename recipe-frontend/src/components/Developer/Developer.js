@@ -35,7 +35,10 @@ const Developer = () => {
                 <p className="text-muted mb-4">Brandeis University, Waltham, MA</p>
                 <div className="d-flex justify-content-center mb-2">
                   <Link to= "https://github.com/Yifei-Zhou" target="_blank">
-                    <MDBBtn>Follow Github</MDBBtn>
+                    <MDBBtn outline className="ms-1">Github</MDBBtn>
+                  </Link>
+                  <Link to= "https://www.linkedin.com/in/yfz23/" target="_blank">
+                    <MDBBtn outline className="ms-1">LinkedIn</MDBBtn>
                   </Link>
                   <a href="mailto:yfzhou23@gmail.com">
                     <MDBBtn outline className="ms-1">Email</MDBBtn>
@@ -47,10 +50,6 @@ const Developer = () => {
             <MDBCard className="mb-4 mb-lg-0">
               <MDBCardBody className="p-0">
                 <MDBListGroup flush className="rounded-3">
-                  <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
-                    <MDBIcon fas icon="globe fa-lg text-warning" />
-                    <MDBCardText>Add Personal Portfolio Here</MDBCardText>
-                  </MDBListGroupItem>
                   <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
                     <MDBIcon fab icon="github fa-lg" style={{ color: '#333333' }} />
                     <MDBCardText>https://github.com/Yifei-Zhou</MDBCardText>
