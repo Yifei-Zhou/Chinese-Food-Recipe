@@ -28,25 +28,30 @@ const AddRecipe = ( {recipes} ) => {
   };
 
   const handleIngredientsChange = (event) => {
-    setIngredients(event.target.value.split('\n'));
+    setIngredients(event.target.value);
   };
 
   const handleDishImageChange = (event) => {
-    setDishImage("https://drive.google.com/thumbnail?id=" + event.target.value + "&sz=w1000");
+    setDishImage(event.target.value);
   };
 
   const handleInstructionsChange = (event) => {
-    setInstructions(event.target.value.split('\n'));
+    setInstructions(event.target.value);
   };
 
   const handleInstructionsImagesChange = (event) => {
-    const InstructionsImagesIDs = event.target.value.split('\n');
-    const InstructionsImagesURLs = InstructionsImagesIDs.map(id => "https://drive.google.com/thumbnail?id=" + id + "&sz=w1000");
-
-    setInstructionsImages(InstructionsImagesURLs);
+    setInstructionsImages(event.target.value);
   };
 
   const handleSubmit = () => {
+
+    const ingredientsArray = ingredients.split('\n');
+    const dishImageURL = "https://drive.google.com/thumbnail?id=" + dishImage + "&sz=w1000";
+    const instructionsArray = instructions.split('\n');
+
+    const InstructionsImagesIDs = instructionsImages.split('\n');
+    const InstructionsImagesURLs = InstructionsImagesIDs.map(id => "https://drive.google.com/thumbnail?id=" + id + "&sz=w1000");
+
 
     const image = 
 
