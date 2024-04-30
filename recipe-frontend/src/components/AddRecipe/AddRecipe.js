@@ -85,16 +85,16 @@ const AddRecipe = () => {
         />
       </Form.Group>
 
-      <InputGroup size="lg">
-        <InputGroup.Text id="input-Description">Recipe Description</InputGroup.Text>
-        <Form.Control
+      <Form.Group className="mb-3" controlId="input-Description">
+        <Form.Label>Recipe Description</Form.Label>
+        <Form.Control as="textarea" rows={3}
           placeholder="Enter Description"
           aria-label="Description"
           aria-describedby="input-Description"
           value={description}
           onChange={handleDescriptionChange}
         />
-      </InputGroup>
+      </Form.Group>
 
       <InputGroup size="lg">
         <InputGroup.Text id="input-Ingredients">Recipe Ingredients</InputGroup.Text>
