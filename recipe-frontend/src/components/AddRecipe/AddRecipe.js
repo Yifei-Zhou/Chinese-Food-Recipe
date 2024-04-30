@@ -73,9 +73,9 @@ const AddRecipe = () => {
   };
 
   return (
-    <div>
-      <InputGroup className="mb-3">
-        <InputGroup.Text id="input-Title">Recipe Name</InputGroup.Text>
+    <Form>
+      <Form.Group className="mb-3" controlId="input-Title">
+        <Form.Label>Recipe Name</Form.Label>
         <Form.Control
           placeholder="Enter Recipe Name"
           aria-label="Recipename"
@@ -83,7 +83,7 @@ const AddRecipe = () => {
           value={title}
           onChange={handleTitleChange}
         />
-      </InputGroup>
+      </Form.Group>
 
       <InputGroup size="lg">
         <InputGroup.Text id="input-Description">Recipe Description</InputGroup.Text>
@@ -148,6 +148,9 @@ const AddRecipe = () => {
           value={instructionsImages}
           onChange={handleInstructionsImagesChange}
         />
+        <InputGroup.Text id="input-InstructionImagesBack">
+          &sz=w1000
+        </InputGroup.Text>
       </InputGroup>
 
       <Button
@@ -159,7 +162,7 @@ const AddRecipe = () => {
         Submit
       </Button>
 
-    </div>
+    </Form>
   );
 };
 
