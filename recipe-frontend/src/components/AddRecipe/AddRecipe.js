@@ -73,9 +73,9 @@ const AddRecipe = () => {
   };
 
   return (
-    <Form>
+    <Form style={{ textAlign: 'left' }}>
       <Form.Group className="mb-3" controlId="input-Title">
-        <Form.Label>Recipe Name</Form.Label>
+        <Form.Label style={{ textAlign: 'left' }}>Recipe Name</Form.Label>
         <Form.Control
           placeholder="Enter Recipe Name"
           aria-label="Recipename"
@@ -86,7 +86,7 @@ const AddRecipe = () => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="input-Description">
-        <Form.Label>Recipe Description</Form.Label>
+        <Form.Label style={{ textAlign: 'left' }}>Recipe Description</Form.Label>
         <Form.Control as="textarea" rows={3}
           placeholder="Enter Description"
           aria-label="Description"
@@ -96,18 +96,18 @@ const AddRecipe = () => {
         />
       </Form.Group>
 
-      <InputGroup size="lg">
-        <InputGroup.Text id="input-Ingredients">Recipe Ingredients</InputGroup.Text>
-        <Form.Control
+      <Form.Group className="mb-3" controlId="input-Ingredients">
+        <Form.Label style={{ textAlign: 'left' }}>Recipe Ingredients</Form.Label>
+        <Form.Control as="textarea" rows={3}
           placeholder="Enter Ingredients (one ingredient per line)"
           aria-label="Ingredients"
           aria-describedby="input-Ingredients"
           value={ingredients}
           onChange={handleIngredientsChange}
         />
-      </InputGroup>
+      </Form.Group>
       
-      <Form.Label htmlFor="basic-dishImage">Dish Image URL in Google Drive</Form.Label>
+      <Form.Label htmlFor="basic-dishImage" style={{ textAlign: 'left' }}>Dish Image URL in Google Drive</Form.Label>
       <InputGroup className="mb-3">
         <InputGroup.Text id="input-DishImageFront">
           https://drive.google.com/thumbnail?id=
@@ -125,23 +125,23 @@ const AddRecipe = () => {
         </InputGroup.Text>
       </InputGroup>
 
-      <InputGroup size="lg">
-        <InputGroup.Text id="input-Instructions">Recipe Instructions</InputGroup.Text>
-        <Form.Control
+      <Form.Group className="mb-3" controlId="input-Instructions">
+        <Form.Label style={{ textAlign: 'left' }}>Recipe Instructions</Form.Label>
+        <Form.Control as="textarea" rows={3}
           placeholder="Enter Instructions (one instruction per line)"
           aria-label="Instructions"
           aria-describedby="input-Instructions"
           value={instructions}
           onChange={handleInstructionsChange}
         />
-      </InputGroup>
+      </Form.Group>
 
-      <Form.Label htmlFor="basic-instructionImages">Image for each Instruction (URL in Google Drive)</Form.Label>
+      <Form.Label htmlFor="basic-instructionImages" style={{ textAlign: 'left' }}>Image for each Instruction (URL in Google Drive)</Form.Label>
       <InputGroup size="lg">
         <InputGroup.Text id="input-InstructionImagesFront">
           https://drive.google.com/thumbnail?id=
         </InputGroup.Text>
-        <Form.Control
+        <Form.Control as="textarea" rows={10}
           placeholder="Enter Google Drive Sharing IDs (one ID per line)"
           aria-label="InstructionsImages"
           aria-describedby="input-InstructionImagesFront"
