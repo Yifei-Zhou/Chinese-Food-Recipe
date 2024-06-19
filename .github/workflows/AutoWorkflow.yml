@@ -8,15 +8,15 @@ on:
 jobs:
    build:
       runs-on: ubuntu-latest
-
-  steps:
-     - uses: actions/checkout@v3
-     
-     - name: Auto Commit
-      run: |
-         echo " " >> README.md
-         git config user.name "Yifei Zhou"
-         git config user.email "yfzhou23@gmail.com"
-         git add .
-         git commit -m "Auto Workflow"
-         git push
+      
+      steps:
+        - uses: actions/checkout@v3
+        
+        - name: Auto Commit
+        run: |
+           echo " " >> README.md
+           git config user.name "Yifei Zhou"
+           git config user.email "yfzhou23@gmail.com"
+           git add .
+           git commit -m "Auto Workflow"
+           git push
