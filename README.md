@@ -30,3 +30,4 @@ Moreover, three alerts for three different error conditions that seem likely and
 1. CPU Usage: Condition: UsageNanoCores > 0.1, Severity: Warning.
 2. Network In: Condition: RxBytes > 200000 B, Severity: Warning.
 3. Network Out: Condition: TxBytes > 1000000 B, Severity: Warning.
+ 
