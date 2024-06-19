@@ -31,3 +31,4 @@ Moreover, three alerts for three different error conditions that seem likely and
 2. Network In: Condition: RxBytes > 200000 B, Severity: Warning.
 3. Network Out: Condition: TxBytes > 1000000 B, Severity: Warning.
  
+ 
